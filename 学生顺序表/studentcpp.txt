@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include"student.h"
+int main()
+{
+	datatype a;
+	int i;
+	SeqList L;
+	datatype x[3]; 
+	x[0]=  {2000001, "张三", "男", 20};
+	x[1] = { 2000002,"李四","男", 21 };
+	x[2]=  { 2000003,"王五","女", 22 };
+	start(&L);
+	inset(&L, 0, x[0]);
+	inset(&L, 1, x[1]);
+	inset(&L, 2, x[2]);
+	for (i = 0; i < 3; i++) {
+		a=output(&L, i);
+		printf("%d,%s,%s,%d\n", a.number, a.name, a.sex, a.age);
+
+	}
+	return 0;
+}

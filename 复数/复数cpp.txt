@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include"neem.h"
+void  main()
+{
+	float num1, num2;
+	Complex c1, c2, c3;
+	printf("please enter two numbers:");
+	scanf_s("%f+%fi",&num1,&num2);
+	c1 = create(num1, num2);
+	printf("please enter two numbers:");
+	scanf_s("%f+%fi", &num1, &num2);
+	c2= create(num1, num2);
+	c3 = add(c1, c2);
+	if (c3.a == 0)
+		printf("两虚数相加为(%fi)\n", c3.b);
+	if(c3.b==0)
+		printf("两虚数相加为%f\n", c3.a);
+	if(c3.a!=0&&c3.b!=0)
+		printf("两虚数相加为%f+(%fi)\n", c3.a,c3.b);
+	c3 = minus(c1, c2);
+	if (c3.a == 0)
+		printf("两虚数相减为(%fi)\n", c3.b);
+	if (c3.b == 0)
+		printf("两虚数相减为%f\n", c3.a);
+	if (c3.a != 0 && c3.b != 0)
+		printf("两虚数相减为%f+(%fi)\n", c3.a, c3.b);
+	c3 = time(c1, c2);
+	if (c3.a == 0)
+		printf("两虚数相乘为(%fi)\n", c3.b);
+	if (c3.b == 0)
+		printf("两虚数相乘为%f\n", c3.a);
+	if (c3.a != 0 && c3.b != 0)
+		printf("两虚数相乘为%f+(%fi)\n", c3.a, c3.b);
+	c3 = divide(c1, c2);
+	if (c3.a == 0)
+		printf("两虚数相除为(%fi)\n", c3.b);
+	if (c3.b == 0)
+		printf("两虚数相除为%f\n", c3.a);
+	if (c3.a != 0 && c3.b != 0)
+		printf("两虚数相除为%f+(%fi)\n", c3.a, c3.b);
+	
+}

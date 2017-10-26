@@ -1,0 +1,39 @@
+#define Maxsize 100
+typedef struct student {
+	int number;
+	char name[5];
+	char sex[3];
+	int age;
+}student;
+typedef student datatype;
+typedef struct
+{
+	typedef student datatype;
+	datatype list[Maxsize];
+	int size;
+}SeqList;
+
+void inset (SeqList *L, int i, datatype x)
+{
+	int j;
+	if (i > Maxsize || i < 0)
+		printf("对不起输入值有误");
+	else if (Maxsize == L->size)
+		printf("对不起已经满了，不能继续添加数据");
+	else {
+		        
+		for (j = L->size; j >i ; j--)
+		{ 
+			L->list[j ] = L->list[j-1];
+		}
+		L->list[i]=x;
+	}
+}
+void start (SeqList *L)
+{
+	L->size = 0;
+ }
+datatype output(SeqList *L, int i)
+{
+	return L->list[i];
+}

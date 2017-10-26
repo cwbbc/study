@@ -1,0 +1,42 @@
+typedef struct Complex
+{
+	float a;
+	float b;
+
+} Complex;
+Complex create(float a, float b)
+{
+	Complex c;
+	c.a = a;
+	c.b = b;
+	return c;
+}
+Complex add(Complex n, Complex m )
+{ 
+	Complex c;
+	c.a = n.a + m.a;
+	c.b= n.b + m.b;
+	return c; 
+}
+Complex minus(Complex n, Complex m)
+ {
+	Complex c;
+	c.a = n.a - m.a;
+	c.b = n.b - m.b;
+	return c;
+ }
+Complex time(Complex n, Complex m)
+{
+	Complex c;
+
+	c.a = n.a*m.a - n.b*m.b;
+	c.b = n.a*m.b + n.b*m.a;
+	return c;
+}
+Complex divide(Complex n, Complex m)
+{
+	Complex c;
+	c.a = (n.a*m.a + n.b*m.b) / (m.a*m.a + m.b*m.b);
+	c.b=  (n.b*m.a - m.b*n.a) / (m.a*m.a + m.b*m.b);
+	return c;
+}
